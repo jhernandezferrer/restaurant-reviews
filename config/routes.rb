@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
       resources :reviews, only: [:new, :create]
     end
+  # To destroy a review we don't need the RESTAURANTS_ID that is why doesn't have to be nested to RESTAURANTS.
+  resources :reviews, only: [ :destroy ]
 end

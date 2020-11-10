@@ -15,5 +15,20 @@
   <%= @restaurant.stars %>
 </p>
 
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <%= link_to 'delete', review_path(review), method: :delete  %>
+<% end %>
+
+<p>
+  <%= link_to 'Write review', new_restaurant_review_path(@restaurant) %>
+</p>
+
+<%# We don't have the GET methos from reviews, because we don't create the show action. That is we
+we can show all the reviews, with a link. We can creatre the show action or display all reviews on the show page. %>
+<%#= link_to 'reviews', restaurant_reviews_path(@restaurant) %>
+
+<%= link_to 'Chef', chef_restaurant_path %>
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

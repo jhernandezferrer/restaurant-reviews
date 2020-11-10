@@ -1,0 +1,8 @@
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<%# We want:
+  <form action="/restaurant/12/reviews/new" method="post"></form>
+%>
